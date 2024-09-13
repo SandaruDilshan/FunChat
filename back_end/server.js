@@ -20,9 +20,12 @@ app.listen(PORT, () =>{
     } 
 );
 
-//Test root route http://localhost:5000
-app.get("/", (req, res) =>{
-    res.send("Hello World !");
-});
+// //Test root route http://localhost:5000
+// app.get("/", (req, res) =>{
+//     res.send("Hello World !");
+// });
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-app.use("/api/auth", authRouts)
+app.use("/api/auth", authRouts);
+
+app.use(express.json());  // This midleware helps to get request body data
+                          // to parse the incoming requests with JSON payloads(from req.body)
