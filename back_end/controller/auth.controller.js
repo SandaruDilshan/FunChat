@@ -1,8 +1,11 @@
-import User from "../models/user.model.js";
+import User from "../models/user.model.js"; 
+import bcryptjs from "bcryptjs";
+import genarateTokenAndSetCookie from "../utils/genarateToken.js";
 
 export const signup = async (req, res) => {
     try{
         const { fullName, userName, password, confirmPassword, gender } = req.body;
+        
         
         if (password !== confirmPassword) {
             return res.status(400).json({ error: "Password do not match.!" });
@@ -14,6 +17,10 @@ export const signup = async (req, res) => {
             return res.status(400).json({ error: "User already exist" });
         }
 
+        //Hash password
+        const salt = await bcryptjs.genSalt(10);
+        const hashedPassword = await bcryptjs.hash(password, salt);
+        
         //Create unique profile pic for default new user(from API)
              //https://avatar-placeholder.iran.liara.run/
 
@@ -23,22 +30,33 @@ export const signup = async (req, res) => {
         const newUser = new User({
             fullName,
             userName,
-            password,
+            password: hashedPassword,
             gender,
             profilePic: gender === "male" ? boyProfilePic : girlProfilePic
-        })
-
-        await newUser.save(); // This will save as a new user in the database
-
-        res.status(201).json({
-            _id: newUser._id,
-            fullName: newUser.fullName,
-            userName: newUser.userName,
-            profilePic: newUser.profilePic
         });
+
+
+        if (newUser) {
+
+            //Genarate token
+            genarateTokenAndSetCookie(newUser._id, res);
+
+            await newUser.save(); // This will save as a new user in the database
+
+            res.status(201).json({
+                _id: newUser._id,
+                fullName: newUser.fullName,
+                userName: newUser.userName,
+                profilePic: newUser.profilePic
+            });
+        }
+        else {
+            res.status(400).jason({ error: "Invalid user data.!" });
+        }
 
     } catch (error) {
         console.log("Error in sign up controller:", error.message);
+        console.log(req.body);
         res.status(500).json({ error: "Internal server error.!" });
     }
 }

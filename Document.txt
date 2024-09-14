@@ -1,0 +1,12 @@
+Authentication -> Identify users as uniquely
+     there are two types
+        -> Cookies based authentication
+		Take username password from user and generate a cookie and store database and 
+		send it to user. After user send every request have generated cookie, it identify 
+		from server and generate response to the user.
+
+	-> Token base authentication
+		Generate a token using user details and concatenate with special string. and send this token to the server
+		
+
+Authorization -> Assign roles to Identified users like (admin, manager, user, test user)
