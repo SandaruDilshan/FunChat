@@ -25,8 +25,8 @@ const userSchema =  new mongoose.Schema(
             type:String,
             default:"",
         },
-    }
-);
+    // CreatedAt and UpdatedAt
+},{timestamps: true});
 
 const User = mongoose.model("User", userSchema); //Here we use singuler and first letter capital word for model name(like User)
 
