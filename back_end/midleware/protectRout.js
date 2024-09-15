@@ -5,7 +5,8 @@ const protectRout = async (req, res, next) => {
     try {
         // Ensure token is coming from the cookies
         const token = req.cookies.jwt;
-
+        //console.log(req.cookies.jwt);
+        
         // If no token is found, respond with error
         if (!token) {
             console.log("Cookies: ", req.cookies);
@@ -18,12 +19,13 @@ const protectRout = async (req, res, next) => {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
         // Check if the decoded object contains user ID
-        if (!decoded || !decoded.id) {
+        if (!decoded || !decoded.userId) {
+            console.log(decoded.userId);
             return res.status(401).json({ error: "Unauthorized, invalid token" });
         }
 
         // Find user by decoded user ID
-        const user = await User.findById(decoded.id).select("-password");
+        const user = await User.findById(decoded.userId).select("-password");
 
         // If user not found, respond with error
         if (!user) {
