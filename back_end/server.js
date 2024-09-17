@@ -1,10 +1,12 @@
 import express from "express"; 
 import dotenv from 'dotenv';
+import cookieParser from "cookie-parser";
 
 import connectToMongoDB from "./db/connectToMongoDB.js";
+
 import authRouts from "./routs/auth.routes.js"
 import messageRouts from "./routs/message.routes.js"  
-import cookieParser from "cookie-parser";
+import userRouts from "./routs/user.routes.js"  
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -25,5 +27,4 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRouts);
 app.use("/api/messages", messageRouts);
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+app.use("/api/users", userRouts);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
