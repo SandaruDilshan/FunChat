@@ -1,7 +1,7 @@
 import React from 'react'
 import Messages from './Messages.jsx'
 import MessageInput from "./MessageInput.jsx"
-<<<<<<< HEAD
+
 import { TiMessages } from "react-icons/ti";
 
 const MessageContainer = () => {
@@ -18,25 +18,11 @@ const MessageContainer = () => {
           <MessageInput />
         </>
       )}
-=======
-
-const MessageContainer = () => {
-  return (
-    <div className='md:min-w-[450px] flex flex-col'>
-        <div className='bg-slate-500 px-4 py-2 mb-2'>
-             <span className='text-gray-900'>John Deo</span>
-        </div>
-          
-          <Messages />
-          <MessageInput />
->>>>>>> 9fb66ff148f92d3b479c845674baccd30c15e466
     </div>
   )
 }
 
 export default MessageContainer
-<<<<<<< HEAD
-
 
 const NoChatSelected = () => {
   return (
@@ -49,5 +35,3 @@ const NoChatSelected = () => {
       </div>
   )
 }
-=======
->>>>>>> 9fb66ff148f92d3b479c845674baccd30c15e466
