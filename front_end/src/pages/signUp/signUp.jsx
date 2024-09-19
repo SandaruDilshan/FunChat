@@ -36,7 +36,7 @@ const SignUp = () => {
                 <form onSubmit={handleSubmit}>
 
                 <div>
-                    <label htmlFor="Full name" className='label p-2'>
+                    <label htmlFor="Fullname" className='label p-2'>
                     <span className='text-base label-text'>Full Name</span>
                     </label>
 
@@ -90,7 +90,9 @@ const SignUp = () => {
 
 
                 <div>
-                    <button className='btn btn-block btn-sm mt-2'>Sign Up</button>
+                    <button className='btn btn-block btn-sm mt-2' disabled={loading}> 
+                        {loading ? <span className="loading loading-spinner"></span> : "Sign Up"}        
+                    </button>
                 </div>
                 </form>
             </div>

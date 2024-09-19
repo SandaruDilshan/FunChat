@@ -15,7 +15,7 @@ function App() {
     <div className='p-4 h-screen flex items-center justify-center'>
 
       <Routes>
-        <Route path="/" element={ authUser ? <Navigate to='/' /> : <Home /> }/>
+        <Route path="/" element={ authUser ? <Home /> : <Navigate to='/signin' /> }/>
         <Route path="/signin" element={ authUser ? <Navigate to='/' /> : <Login /> } />
         <Route path="/signup" element={authUser ? <Navigate to='/' /> : <SignUp />} />
         {/* If authentication user then directed to the home page if it is not show sign up page */}

@@ -4,7 +4,7 @@ import { useAuthContext } from '../context/AuthContext.jsx';
 
 const useSignup = () => {
     const [loading, setLoading] = useState(false);
-    const { authUser, setAuthUser } = useAuthContext();
+    const { setAuthUser } = useAuthContext();
 
     const signUp = async ({ fullName, userName, password, confirmPassword, gender }) => {
         const success = handleInputErrors({ fullName, userName, password, confirmPassword, gender })
