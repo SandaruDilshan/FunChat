@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import GenderCheckBox from './GenderCheckBox.jsx'
@@ -26,69 +26,56 @@ const SignUp = () => {
         await signUp(inputs)
     }
 
-=======
-import React from "react";
-
-const SignUp = () => {
->>>>>>> 9fb66ff148f92d3b479c845674baccd30c15e466
     return (
         <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
             <div className='h-full p-6 w-full bg-gray-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60 border border-gray-100'>
                 <h1 className='text-3xl font-semibold text-center text-white'>Sign Up
                 <span className='text-blue-600'> To FunChat</span>
                 </h1>
-<<<<<<< HEAD
+
                 <form onSubmit={handleSubmit}>
-=======
-                <form action="">
->>>>>>> 9fb66ff148f92d3b479c845674baccd30c15e466
+
                 <div>
                     <label htmlFor="Full name" className='label p-2'>
                     <span className='text-base label-text'>Full Name</span>
                     </label>
-<<<<<<< HEAD
+
                     <input type="text" placeholder='Enter Full name' className='w-full input input-bordered h-10'
                         value={inputs.fullName}
                         onChange={(e) => setInputs({...inputs, fullName: e.target.value})}
                     />
-=======
-                    <input type="text" placeholder='Enter Full name' className='w-full input input-bordered h-10' />
->>>>>>> 9fb66ff148f92d3b479c845674baccd30c15e466
+
                 </div>
                 
                 <div>
                     <label htmlFor="Username" className='label p-2'>
                     <span className='text-base label-text'>Username</span>
                     </label>
-<<<<<<< HEAD
+
                     <input type="text" placeholder='Enter username' className='w-full input input-bordered h-10'
                         value={inputs.userName}
                         onChange={(e) => setInputs({...inputs, userName: e.target.value})}    
                     />
-=======
-                    <input type="text" placeholder='Enter username' className='w-full input input-bordered h-10' />
->>>>>>> 9fb66ff148f92d3b479c845674baccd30c15e466
+
                 </div>
 
                 <div>
                     <label htmlFor="Password" className='label p-2'>
                     <span className='text-base label-text'>Password</span>
                     </label>
-<<<<<<< HEAD
+
                     <input type="password" placeholder='Enter Password' className='w-full input input-bordered h-10'
                         value={inputs.password}
                         onChange={(e) => setInputs({...inputs, password: e.target.value})}    
                     />
-=======
-                    <input type="text" placeholder='Enter Password' className='w-full input input-bordered h-10' />
->>>>>>> 9fb66ff148f92d3b479c845674baccd30c15e466
+
                 </div>
                     
                 <div>
                     <label htmlFor="Confirm Password" className='label p-2'>
                     <span className='text-base label-text'>Confirm Password</span>
                     </label>
-<<<<<<< HEAD
+
                     <input type="password" placeholder='Enter Confirm Password' className='w-full input input-bordered h-10'
                         value={inputs.confirmPassword}
                         onChange={(e) => setInputs({...inputs, confirmPassword: e.target.value})}
@@ -100,30 +87,7 @@ const SignUp = () => {
                 <Link to="/signin" className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block'>
                     Alredy have an account?
                 </Link>
-=======
-                    <input type="text" placeholder='Enter Confirm Password' className='w-full input input-bordered h-10' />
-                </div>
 
-                <div className="flex">
-                    <div className="form-control">
-                        <label htmlFor="male" className={'label gap-2 cursor-pointer'}>
-                            <span className="label-text border-slate-900">Male</span>
-                            <input type="checkbox" className="checkbox "/>
-                        </label>
-                    </div>
-
-                    <div className="form-control">
-                        <label htmlFor="female" className={'label gap-2 cursor-pointer'}>
-                            <span className="label-text border-slate-900">Female</span>
-                            <input type="checkbox" className="checkbox "/>
-                        </label>
-                    </div>
-                </div>
-                    
-                <a href="#" className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block'>
-                    Alredy have an account?
-                </a>
->>>>>>> 9fb66ff148f92d3b479c845674baccd30c15e466
 
                 <div>
                     <button className='btn btn-block btn-sm mt-2'>Sign Up</button>
