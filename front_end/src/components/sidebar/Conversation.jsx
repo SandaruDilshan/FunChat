@@ -1,11 +1,18 @@
 import React from 'react' 
+import useConversation from '../../zustand_store/useConversation.js'
 
-const Conversation = ({conversation, lastIndex}) => {
-  console.log(lastIndex,conversation);
-  // console.log(conversation.fullName);
+const Conversation = ({conversation, lastIndex}) => {   // if we not use in {} conversation, lastIndex it return error
+  console.log(lastIndex, conversation);
+
+  const { selectedConversation, setSelectedConversation } = useConversation();
+  const isSelected = selectedConversation?._id === conversation._id; // isSelected value true then selected chat gonna color
+  
   return (
     <>
-          <div className='flex gap-2 items-center hover:bg-sky-500 rounded p-2 py-1 cursor-pointer'>
+      <div className={`flex gap-2 items-center hover:bg-sky-500 rounded p-2 py-1 cursor-pointer
+        ${isSelected ? "bg-sky-500" : ""}`}
+        onClick ={ ()=> setSelectedConversation(conversation)}
+      >
             <div className='avatar online'>
                 <div className='w-12 rounded-full'>
                     <img src={conversation.profilePic} alt="" />
