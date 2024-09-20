@@ -2,7 +2,7 @@ import React from 'react'
 import useConversation from '../../zustand_store/useConversation.js'
 
 const Conversation = ({conversation, lastIndex}) => {   // if we not use in {} conversation, lastIndex it return error
-  console.log(lastIndex, conversation);
+  // console.log(lastIndex, conversation);
 
   const { selectedConversation, setSelectedConversation } = useConversation();
   const isSelected = selectedConversation?._id === conversation._id; // isSelected value true then selected chat gonna color
