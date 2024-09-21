@@ -12,7 +12,6 @@ const PORT = process.env.PORT || 5000;
 
 dotenv.config();
 
-
 //Midleware
 //Create express server
 app.use(express.json());  // This midleware helps to get request body data

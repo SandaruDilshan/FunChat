@@ -12,6 +12,11 @@ const io = new Server(server, {
     },  
 });
 
+//for real time chat
+export const getReceiverSocketId = (receiverId) => {
+    return userSocketMap[receiverId]; // when we pass reveiverI return the socet id
+}
+
 // create online user status
 const userSocketMap = {};  //{userId: socketId}
 
