@@ -16,6 +16,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={ authUser ? <Home /> : <Navigate to='/signin' /> }/>
+        {/* <Route path='/' element ={  <Home /> } /> */}
         <Route path="/signin" element={ authUser ? <Navigate to='/' /> : <Login /> } />
         <Route path="/signup" element={authUser ? <Navigate to='/' /> : <SignUp />} />
         {/* If authentication user then directed to the home page if it is not show sign up page */}

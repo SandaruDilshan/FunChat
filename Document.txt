@@ -8,5 +8,6 @@ Authentication -> Identify users as uniquely
 	-> Token base authentication
 		Generate a token using user details and concatenate with special string. and send this token to the server
 		
-
+	-> Socket.io library create real time renderng between users.
+	
 Authorization -> Assign roles to Identified users like (admin, manager, user, test user)
