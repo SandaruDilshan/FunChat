@@ -8,7 +8,7 @@ const useLogin = () => {
     const [loading, setLoading] = useState(false)
     const { setAuthUser } = useAuthContext();
     
-    const login = async (userName, password) => {
+    const login = async (userName, password) => {   
         const success = handleInputErrors({ userName, password})
 
         setLoading(true);
