@@ -9,5 +9,12 @@ Authentication -> Identify users as uniquely
 		Generate a token using user details and concatenate with special string. and send this token to the server
 		
 	-> Socket.io library create real time renderng between users.
-	
+		app.use(express.static(path.join(__dirname, "/front_end/dist")));
+
+		app.get("*", (req, res) => {
+			res.sendFile(path.join(__dirname, "front_end", "dist", "index.html"));
+		}); front end can run in the server as well (connect front end application from server)
+			-> npm run build 
+			-> npm run 
+			
 Authorization -> Assign roles to Identified users like (admin, manager, user, test user)
